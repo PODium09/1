@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>PODium</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pacifico|Vibur" rel="stylesheet">  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+  <body>
+  <div id="header">
+    
+   <img class="navlogo" src="./Images/navlogo.png" alt="Podcasts" >
+    <ul id="unol">
+      <a href="index.html"><li>Home</li></a>
+      <a href="podcast.html"><li>Podcasts</li></a>
+      <a href="blogs.html"><li>Blogs</li></a>
+      <a href="poem.html"><li>Poems</li></a>
+      <a href="contactus.html"><li>Contact Us</li></a>
+    </ul>
+  </div>
+
+  <!-- <canvas id="my-canvas"></canvas>
+  <script src="node_modules/confetti-js/dist/index.min.js"></script>
+  <script src="index.min.js"></script>
+<script>
+        var confettiElement = document.getElementById('my-canvas');
+        var confettiSettings = { target: confettiElement };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+</script> -->
+<div class="pg1">
+   <div id="mainarea">
+   <img class="mainlogo" src="./Images/mainlogo.png" alt="">
+  
+  <div class="nametext">
+     <p>PODium</p>
+  </div> <br>
+  <!-- <div class="punchline">
+    <p id="animated" data-text="Anything Punchline" >Podcasting blogs</p>
+  </div>
+ </div>
+ <br> -->
+
+<div id="mySidenav" class="sidenav">
+  <a href="https://www.instagram.com/podiumofficial09/" id="insta"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+  <a href="https://www.facebook.com/PODium-101698278908073" id="fb"><i class="fa fa-facebook-f" style="font-size:36px"></i></a>
+  <a href="https://twitter.com/AuthenticPodium" id="twitter"><i class="fa fa-twitter" style="font-size:36px;color:white"></i></a>
+  <a href="https://www.youtube.com/channel/UCGp8AqOVp78RWATE0CEgo4w" id="yt"><i class="fa fa-youtube-play" style="font-size:36px"></i></a>
+</div>
+
+<h1 aria-label="Hi! We're developers">
+  Hi! We are&nbsp;<span class="typewriter"></span>
+</h1>
+<!-- 
+<h1>
+  <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, We are PODium", "We are Creative.", "We love Writing.", "We Love to Develop." ]'>
+    
+  </a>
+</h1> -->
+
+<script>
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
+   </div>
+  </body>
+</html>
